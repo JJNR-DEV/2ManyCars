@@ -1,0 +1,37 @@
+$panelBorder: 1px solid lightgrey;
+
+/* Rides */
+
+.panel {
+	display: inline-grid;
+	border: $panelBorder;
+}
+
+.lrides {
+	background-color: #fafafa;
+    padding: 2em;
+    
+    a {
+        text-decoration: none;
+        &:hover {
+            color: grey;
+        }
+    }
+}
+
+@media screen and (max-width: 590px){
+	.lrides {
+		padding: 0;
+	}
+}
+
+.orides {
+    background-color: #fafafa;
+
+    a {
+        text-decoration: none;
+        &:hover {
+            color: grey;
+        }
+    }
+}

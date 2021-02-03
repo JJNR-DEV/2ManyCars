@@ -1,0 +1,32 @@
+.dashboard {
+    header {
+        padding-top: 1em;
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+
+            .greeting {
+                display: flex;
+                align-items: flex-end;
+
+                img {
+                    filter: brightness(10);
+                }
+            }
+
+            .navbar {
+                display: flex;
+                align-items: flex-end;
+                margin-bottom: 0;
+                padding-top: 0;
+
+                ul {
+                    float: right;
+                    margin: 0;
+                }
+            }
+            
+        }
+    }
+}

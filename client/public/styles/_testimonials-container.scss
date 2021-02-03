@@ -1,0 +1,33 @@
+/* Testimonials */
+
+.testimonials {
+	margin: 3em 0 3em 0;
+
+	img {
+		max-width: 100%;
+	}
+
+	.panel {
+		transition: filter 0.5s;
+
+		&:hover {
+			filter: drop-shadow(2px 4px 6px black);
+		}
+	}
+}
+
+@media screen and (max-width: 990px){
+	.testimonials {
+        font-size: 11px;
+        
+        h6 {
+            font-size: 11px;
+        }
+	}
+}
+
+@media screen and (max-width: 400px){
+	.testimonials .col-sm-3 {
+		padding: 0 0.5em;
+	}
+}

@@ -1,0 +1,25 @@
+/* Easy */
+
+.easy {
+    margin: 3em 0 3em 0;
+    
+    h3 {
+        font-weight: bold;
+        color: #f27802;
+        cursor: pointer;
+    }
+
+    .img-responsive {
+        margin: 0 auto;
+    }
+
+    @media screen and (max-width: 770px){
+        .img {
+            display: inline-flex;	
+        }
+    
+        .examplesText{
+            text-align: center;
+        }
+    }
+}

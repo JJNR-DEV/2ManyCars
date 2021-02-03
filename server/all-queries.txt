@@ -1,0 +1,68 @@
+// CREATE table if not EXISTS
+
+await client.query(`CREATE TABLE IF NOT EXISTS ManyCars.Users (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL
+)`)
+
+
+// INSERT values in TABLE
+
+await client.query(`INSERT INTO ManyCars.Users (name, email)
+    VALUES ('Jonh Doe', 'lorem_ipsum@email.com')    
+`)
+
+
+// DELETE values in TABLE
+
+const response = await db(`DELETE FROM ManyCars.Users WHERE id > 1`, [])
+
+
+// Creating Rides TABLE
+
+(`CREATE TABLE IF NOT EXISTS ManyCars.Offer_Ride (
+    id SERIAL PRIMARY KEY,
+    ride_from VARCHAR(100) NOT NULL,
+    ride_to VARCHAR(100) NOT NULL,
+    CONSTRAINT user_id FOREIGN KEY(id) REFERENCES ManyCars.Users(id) ON DELETE CASCADE,
+    charge_value VARCHAR(15) NULL,
+    max_people VARCHAR(3) NULL,
+    date DATE NULL,
+    CONSTRAINT matched_user 
+        FOREIGN KEY(id) 
+        REFERENCES ManyCars.Searching_Ride(id)
+        DEFAULT NULL
+        ON DELETE SET NULL 
+        ON UPDATE CASCADE,
+    concluded BOOLEAN NOT NULL DEFAULT false
+)`
+
+
+// Alter table to add foreign KEY
+
+`ALTER TABLE ManyCars.Offer_Ride 
+    ADD CONSTRAINT matched_user 
+    FOREIGN KEY (id) 
+    REFERENCES ManyCars.Searching_Ride(id) 
+        DEFAULT NULL
+        ON DELETE SET NULL 
+        ON UPDATE CASCADE,
+`
+
+
+// DROP CONSTRAINT
+
+`ALTER TABLE ManyCars.Offer_Ride DROP CONSTRAINT matched_user`
+
+
+// Add column with FK
+
+`ALTER TABLE ManyCars.Searching_Ride 
+    ADD user_id INTEGER,
+    ADD CONSTRAINT user_id
+        FOREIGN KEY (id) 
+        REFERENCES ManyCars.Users(id) 
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+`

@@ -1,0 +1,35 @@
+/* States */
+.states {
+	background-color: #f4f4f4;
+    padding: 2em 0 2em 0;
+
+    h1 {
+        text-align: center;
+        padding-bottom: 1em;
+    }
+    
+    a {
+        &:hover {
+            font-weight: 600;
+            color: #000;
+        }
+    }
+
+    @media screen and (max-width: 700px){
+        .container ul {
+            padding: 0 0.3em;
+        }
+    
+        li {
+            font-size: 9px;
+            padding-right: 0.1em;
+            padding-bottom: 0.5em;
+        }
+    }
+
+    @media screen and (max-width: 500px){
+        .col-xs-4 {
+            width: 33.33333333333333% !important;
+        }
+    }
+}

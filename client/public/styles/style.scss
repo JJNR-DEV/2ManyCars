@@ -1,0 +1,85 @@
+/* body */
+body {
+	font-family: 'Open Sans', sans-serif;
+
+    li {
+        list-style: none;
+    }
+}
+
+.main-body {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container {
+	padding-bottom: 1em;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+.panel {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 530px){
+	.col-xs-6 {
+		width: 100% !important;
+	}
+}
+
+/* Fonts */
+
+@media screen and (max-width: 320px){
+	h1 {
+		font-size: 26px;
+	}
+
+	h3 {
+		font-size: 20px;
+	}
+
+	h4 {
+		font-size: 16px;
+	}
+
+	p {
+		font-size: 12px;
+	}
+}
+
+/* Form Inputs */
+
+.input-group {
+    .form-control {
+        max-width: 250px;
+    }
+}
+
+.form-input-control {
+    width: 300px !important;
+    text-align: center;
+}
+
+@media screen and (max-width: 400px){
+	.form-input-control {
+		width: 100% !important;
+	}
+}
+
+@import './header';
+@import './primarynav';
+@import './rides-container';
+@import './easy-container';
+@import './states-container';
+@import './newsletter-container';
+@import './testimonials-container';
+@import './app-container';
+@import './professionals-container';
+@import './footer';
+
+@import './forms';
+@import './dashboard';

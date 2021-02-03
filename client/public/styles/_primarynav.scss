@@ -1,0 +1,23 @@
+/* Icons of Primary Navigation */
+
+.icons {
+	background-color: #f4f4f4;
+    padding: 1em;
+    
+    li {
+        padding: 0 1em;
+    }
+
+    
+    .secondary-nav {
+        &:hover {
+            filter: invert(1);
+        }
+    }
+
+    @media screen and (max-width: 470px){
+		li {
+            padding: 0 0.3em;
+        }
+    }
+}

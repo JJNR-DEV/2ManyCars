@@ -1,0 +1,15 @@
+/* App */
+
+.app {
+	padding: 9em 1em;
+    color: white;
+
+    .input-group {
+        display: inline-flex;
+    }
+}
+
+.app.visible {
+    background-image: url("../images/app.jpg");
+    background-repeat: no-repeat;
+}

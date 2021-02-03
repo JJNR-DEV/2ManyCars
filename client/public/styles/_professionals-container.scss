@@ -1,0 +1,265 @@
+@mixin topLeft($top, $left) {
+    top: $top;
+    left: $left;
+}
+
+/* Professionals */
+
+.professionals {
+    margin: 5em 0.2em 2em 0.2em;
+    
+    h1 {
+        margin-bottom: 1em;
+    }
+
+    .thumbnail {
+        display: table-cell;
+        position: relative;
+        border: none;
+    }
+
+    .col-lg-8 {
+        padding: 3px;
+    }
+
+    .col-md-4 {
+        padding: 3px;
+    }
+
+    .thumbcontent {
+        padding-top: 6em;
+    }
+
+    .big {
+        .post-content {
+            @include topLeft(43em, 4em);
+        }
+    }
+
+    .topRight {
+        .post-content {
+            @include topLeft(17em, 3em);
+        }
+    }
+
+    .btmthumbs {
+        .post-content {
+            @include topLeft(17em, 3em);
+        }
+    }
+
+    .post-content {
+        position: absolute;
+        color: #FFFFFF;
+        text-align: left;
+    }
+
+    @media screen and (max-width: 1200px){
+        .big {
+            .post-content {
+                @include topLeft(35em, 3em);
+            }
+        }
+    
+        .topRight {
+            .post-content {
+                @include topLeft(13em, 3em);
+            }
+        } 
+    
+        .btmthumbs {
+            .post-content {
+                @include topLeft(13em, 3em);
+            }
+        } 
+    }
+    
+    @media screen and (max-width: 990px){
+        .big {
+            .post-content {
+                @include topLeft(27em, 2em);
+            }
+        } 
+    
+        .topRight {
+            .post-content {
+                @include topLeft(10em, 2em);
+            }
+        }
+    
+        .btmthumbs {
+            .post-content {
+                @include topLeft(10em, 2em);
+            }
+        }
+    
+        .thumbcontent {
+            padding-top: 3em;
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        .thumbc {
+            margin: 0 auto;
+            width: 100% !important;
+        }
+    }
+    
+    @media screen and (max-width: 765px){
+        .big {
+            .post-content {
+                @include topLeft(40em, 4em);
+            }
+        }
+    
+        .topRight {
+            .post-content {
+                @include topLeft(17em, 3em);
+            }
+        }
+    
+        .btmthumbs {
+            .post-content {
+                @include topLeft(17em, 3em);
+            }
+        }
+    }
+    
+    @media screen and (max-width: 700px){
+        h3 {
+            font-size: 15px;
+        }
+    
+        h5{
+            font-size: 12px;
+        }
+    }
+    
+    @media screen and (max-width: 680px){
+        .big {
+            .post-content {
+                @include topLeft(33em, 2em);
+            }
+        }
+    
+        .topRight {
+            .post-content {
+                @include topLeft(13em, 2em);
+            }
+        }
+    
+        .btmthumbs {
+            .post-content {
+                @include topLeft(13em, 2em);
+            }
+        }
+    }
+    
+    @media screen and (max-width: 580px){
+        .big {
+            .post-content {
+                @include topLeft(28em, 2em);
+            }
+        }
+    
+        .topRight {
+            .post-content{
+                @include topLeft(9em, 2em);
+            }
+        }
+    
+        .btmthumbs {
+            .post-content{
+                @include topLeft(9em, 2em);
+            }
+        }
+    }
+
+    @media screen and (max-width: 531px){
+        .col-xs-6 {
+            width: 50% !important;
+        }
+    
+        .thumbc {
+            margin: 0 auto;
+            width: 100% !important;
+        }
+    }
+    
+    @media screen and (max-width: 500px){
+        .big {
+            .post-content {
+                @include topLeft(23em, 2em);
+            }
+        }
+    }
+    
+    @media screen and (max-width: 430px){
+        .big {
+            .post-content {
+                @include topLeft(19em, 2em);
+            }
+        }
+    
+        .topRight {
+            .post-content {
+                @include topLeft(6em, 2em);
+            }
+        }
+    
+        .btmthumbs {
+            .post-content {
+                @include topLeft(6em, 2em);
+            }
+        }
+    }
+    
+    @media screen and (max-width: 375px){
+        .big {
+            .post-content {
+                top: 15em;
+            }
+        }
+    
+        .topRight {
+            .post-content {
+                top: 5em;
+            }
+        }
+    
+        .btmthumbs {
+            .post-content {
+                top: 5em;
+            }
+        }
+    }
+    
+    @media screen and (max-width: 330px){
+        .big {
+            .post-content {
+                @include topLeft(14em, 1em);
+            }
+        }
+    
+        .topRight {
+            .post-content {
+                @include topLeft(4em, 1em);
+            }
+        }
+    
+        .btmthumbs {
+            .post-content {
+                @include topLeft(4em, 1em);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+/* Newsletter */
+
+.newsletter {
+	color: white;	
+    padding: 9em 1em;
+
+    .input-group{
+        display: inline-flex;
+    }
+}
+
+.newsletter.visible {
+    background-image: url("../images/newsletter.jpg");
+    background-repeat: no-repeat;
+}

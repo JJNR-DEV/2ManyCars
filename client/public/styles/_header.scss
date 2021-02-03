@@ -1,0 +1,87 @@
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
+/* Header */
+
+header {
+	background-image: url("../images/headerback.jpg");
+	background-repeat: no-repeat;
+	color: white;
+    background-size: cover;
+
+    form{
+        margin-bottom: 4em;
+
+        .route {
+            @include flexCenter();
+
+            input{
+                width: auto;
+            }
+        }
+
+        
+        @media screen and (max-width: 768px){
+            .route {
+                margin: 0 10px;
+            }
+        }
+
+        @media screen and (max-width: 490px){
+            .route {
+                display: inline-grid;
+
+                .form-control {
+                    border-radius: 0;
+                }
+
+                .btn {
+                    border-radius: 0 !important;
+                }
+            }
+        }
+    }
+    
+    nav {
+        padding-top: 4em;
+
+        a {
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+
+        li {
+            margin-right: 1em;
+        }
+
+        .headerLinks {
+            text-align: right;
+        }
+
+        @media screen and (max-width: 490px){
+            .headerLinks {
+                display: inline-grid;
+                float: right;
+            }
+        
+            .headerLinks li {
+                padding-bottom: 0.5em; 
+            }
+        }
+        
+        @media screen and (max-width: 575px){
+            li {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media screen and (max-width: 530px){
+        .col-xs-6 {
+            width: 50% !important;
+        }
+    }
+}
