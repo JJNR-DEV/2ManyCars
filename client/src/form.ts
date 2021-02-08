@@ -13,7 +13,7 @@ const submitInfo = async (url: string, data: object) => {
 const form = document.querySelector('form');
 form?.addEventListener('submit', (e: Event): void => {
     e.preventDefault();
-    
+
     let userInfo: { [key: string]: string | number } = {};
     const allValues = [...form.querySelectorAll('input')];
     
@@ -25,13 +25,21 @@ form?.addEventListener('submit', (e: Event): void => {
 });
 
 const formPath = (path: String, userData: object) => {
-    if(path.includes('register.html')) {
-        submitInfo('/forms/register.html', userData)
-            .then(data => console.log(data))
-            .catch(err => console.error(`An issue ocurred: ${err}`))
-    } else if(path.includes('log-in.html')) {
-        submitInfo('/forms/log-in.html', userData)
-            .then(data => console.log(data))
-            .catch(err => console.error(`An issue ocurred: ${err}`))
-    }
+    const link = path.split('/');
+    const formName = link[link.length - 1];
+
+    submitInfo(`/forms/${formName}`, userData)
+        .then(data => {
+            if(data.status === 200){
+                return window.location.href = data.url;
+            }
+
+            return data.json();
+        })
+        .then(res => {
+            if(res.message) {
+                alert(res.message);
+            }
+        }) 
+        .catch(err => console.error(`An issue ocurred: ${err}`))
 }

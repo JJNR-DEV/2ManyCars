@@ -29,14 +29,19 @@ form === null || form === void 0 ? void 0 : form.addEventListener('submit', (e) 
     formPath(document.URL, userInfo);
 });
 const formPath = (path, userData) => {
-    if (path.includes('register.html')) {
-        submitInfo('/forms/register.html', userData)
-            .then(data => console.log(data))
-            .catch(err => console.error(`An issue ocurred: ${err}`));
-    }
-    else if (path.includes('log-in.html')) {
-        submitInfo('/forms/log-in.html', userData)
-            .then(data => console.log(data))
-            .catch(err => console.error(`An issue ocurred: ${err}`));
-    }
+    const link = path.split('/');
+    const formName = link[link.length - 1];
+    submitInfo(`/forms/${formName}`, userData)
+        .then(data => {
+        if (data.status === 200) {
+            return window.location.href = data.url;
+        }
+        return data.json();
+    })
+        .then(res => {
+        if (res.message) {
+            alert(res.message);
+        }
+    })
+        .catch(err => console.error(`An issue ocurred: ${err}`));
 };

@@ -1,4 +1,5 @@
 import { Router, Request, Response } from 'express';
+import bcrypt from 'bcrypt';
 import db from '../../db';
 import { nameValidator, emailValidator, passwordValidator } from '../validators';
 
@@ -13,11 +14,16 @@ route.post('/', async (req: Request, res: Response) => {
         emailValidator(email);
         passwordValidator(password);
 
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         const registerResponse = await db(`
             INSERT INTO ManyCars.Users (name, email, password)
             VALUES ($1, $2, $3)
-        `, [name, email, password]);
-        res.status(201).send(registerResponse);
+        `, [name, email, hashedPassword]);
+
+        console.log(`Response received: ${registerResponse}`);
+
+        res.redirect(307, 'forms/log-in.html');
     } catch(err) {
         console.log(`The error: ${err.message}`);
         switch (err.message) {

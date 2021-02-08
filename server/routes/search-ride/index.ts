@@ -6,11 +6,11 @@ const route = Router();
 
 route.post('/', async (req: Request, res: Response) => {
     try {
-        const { rideFrom, rideTo, charge, maxPeople, date } = req.body;
+        const { rideFrom, rideTo, peopleRide, date } = req.body;
         const response = await db(`
-            INSERT INTO ManyCars.Offer_Ride (ride_from, ride_to, charge_value, max_people, date)
-            VALUES ($1, $2, $3, $4, $5)
-        `, [rideFrom, rideTo, charge, maxPeople, date]);
+            INSERT INTO ManyCars.Searching_Ride (ride_from, ride_to, people_ride, date)
+            VALUES ($1, $2, $3, $4)
+        `, [rideFrom, rideTo, peopleRide, date]);
     
         console.log(response);
     

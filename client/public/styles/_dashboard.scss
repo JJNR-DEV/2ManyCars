@@ -29,4 +29,52 @@
             
         }
     }
+
+    .activity-grid {
+        display: grid;
+        grid-template-areas: "header header header header header";
+
+        .grid-header {
+            grid-area: header;
+            grid-area: header;
+            font-size: 1.1em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .type {
+            grid-column-start: 1;
+            grid-column-end: 1;
+        }
+
+        .from {
+            grid-column-start: 2;
+            grid-column-end: 2;
+        }
+
+        .to {
+            grid-column-start: 3;
+            grid-column-end: 3;
+        }
+
+        .value {
+            grid-column-start: 4;
+            grid-column-end: 4;
+        }
+
+        .status {
+            grid-column-start: 5;
+            grid-column-end: 5;
+        }
+    }
+    
+    .ride-options {
+        padding: 20px;
+        display: flex;
+        justify-content: space-evenly;
+
+        button {
+            @include ctaButton;
+        }
+    }
 }

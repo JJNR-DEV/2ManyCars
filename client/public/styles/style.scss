@@ -70,6 +70,17 @@ a {
 	}
 }
 
+@mixin ctaButton {
+	color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd;
+	padding: 10px;
+	border-radius: 4px;
+	border: 1px solid;
+	width: 200px;
+	margin: 20px auto;
+}
+
 @import './header';
 @import './primarynav';
 @import './rides-container';
